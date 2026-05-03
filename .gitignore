@@ -1,0 +1,18 @@
+
+#Omgeving
+/venv
+.env
+
+#Python cache
+__pycache__/
+*.pyc
+*.pyo
+
+#Django
+*.sqlite3
+media/
+staticfiles/
+
+#Editor
+.vscode/
+.idea/
