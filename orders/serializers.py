@@ -53,4 +53,12 @@ class OrderSerializer(serializers.ModelSerializer):
         # 4. Bereken totaalprijs en ververs voor de response
         order.update_total_price()
         order.refresh_from_db()
-        return order 
+        return order
+
+        
+
+    def validate(self, data):
+        restaurant = data.get('restaurant')
+        if not restaurant.is_active:
+            raise serializers.ValidationError("Dit restaurant neemt momenteel geen bestellingen aan.")
+        return data
