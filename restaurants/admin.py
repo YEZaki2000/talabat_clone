@@ -8,8 +8,8 @@ class MenuItemInline(admin.TabularInline):
 
 @admin.register(Restaurant)
 class RestaurantAdmin(admin.ModelAdmin):
-    list_display = ('name', 'city', 'is_active')
-    list_filter = ('is_active', 'city')
+    list_display = ('name', 'is_active')
+    list_filter = ('is_active',)
     search_fields = ('name',)
     inlines = [MenuItemInline]
 

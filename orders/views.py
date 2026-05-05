@@ -4,6 +4,8 @@ from .models import Order, OrderItem
 from .serializers import OrderSerializer
 from .permissions import IsOwner
 
+from rest_framework import permissions
+
 class OrderViewSet(viewsets.ModelViewSet):
     queryset = Order.objects.all().order_by('-created_at')
     serializer_class = OrderSerializer

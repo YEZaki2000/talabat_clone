@@ -10,7 +10,7 @@ class RestaurantViewSet(viewsets.ModelViewSet):
     queryset = Restaurant.objects.filter(is_active=True)
     serializer_class = RestaurantSerializer
     filter_backends = [DjangoFilterBackend, SearchFilter]
-    filterset_fields = ['city'] # Gebruikers kunnen nu ?city=Cairo doen
+    #filterset_fields = ['city'] # Gebruikers kunnen nu ?city=Cairo doen
     search_fields = ['name', 'description'] # Zoekbalk functionaliteit
     permission_classes = [AllowAny]
 
