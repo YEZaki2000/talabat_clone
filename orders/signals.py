@@ -7,4 +7,13 @@ def order_status_change_handler(sender, instance, created, **kwargs):
     if not created:
         # Hier kun je logica toevoegen die draait bij een UPDATE
         print(f"Bestelling {instance.id} is nu: {instance.status}")
+
+        # 2. Opslaan in database
+        OrderStatusLog.objects.create(
+            order=instance,
+            status=instance.status
+
         # Toekomst: Stuur hier een Push Notification naar de React Native app
+        )
+
+
